@@ -1,0 +1,245 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  border-bottom: 1px solid #5a4a42; /* Darker brown border */
+  background-color: #6B240C; /* Base color */
+}
+
+.header-content {
+  display: flex;
+  height: 4rem;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo {
+  position: relative;
+  height: 3.5rem;
+  width: 3.5rem;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.logo-text {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff; /* White text for better contrast */
+}
+
+/* Desktop Navigation */
+.desktop-nav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .desktop-nav {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .nav-link {
+    color: #ffffff; /* White text */
+    font-weight: 500;
+    transition: color 0.2s;
+    padding: 0.5rem 0;
+    position: relative;
+  }
+
+  .nav-link:hover {
+    color: #E48F45; /* Lighter accent color on hover */
+  }
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+
+.menu-button {
+  color: #ffffff; /* White text */
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0;
+}
+
+.menu-button:hover {
+  color: #E48F45; /* Lighter accent color on hover */
+}
+
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 80%;
+  height: 100vh;
+  background-color: #6B240C; /* Base color */
+  z-index: 101;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  border-left: 1px solid #5a4a42; /* Darker brown border */
+}
+
+.menu-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding: 2rem;
+  background-color: #6B240C; /* Base color */
+}
+
+.close-button {
+  align-self: flex-end;
+  background-color: #994D1C; /* Text color */
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.close-button:hover {
+  background-color:rgb(124, 55, 23); /* Darker brown */
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  background-color: #6B240C; /* Base color */
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.mobile-nav .nav-link {
+  color: #ffffff; /* White text */
+  font-weight: 600;
+  font-size: 1.25rem;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+  background-color: #994D1C; /* Text color */
+  box-shadow: 0 2px 4px rgba(238, 0, 0, 0.1);
+  text-align: center;
+  border-left: 4px solid rgb(120, 53, 15); /* Darker brown */
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.mobile-nav .nav-link:hover {
+  color: #ffffff;
+  background-color:rgb(124, 55, 23); /* Darker brown */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu-title {
+  color: #ffffff; /* White text */
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #994D1C; /* Text color */
+  background-color: #6B240C; /* Base color */
+  margin-top: 1rem;
+}
+
+/* Cart icon styles */
+.cart-icon {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+  color: #ffffff; /* White text */
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #E48F45; /* Light accent color */
+  color: #6B240C; /* Base color */
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+/* Mobile cart link */
+.mobile-cart-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px 0;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mobile-cart-count {
+  background-color: #E48F45; /* Light accent color */
+  color: #6B240C; /* Base color */
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+}

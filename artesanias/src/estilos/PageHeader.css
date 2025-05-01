@@ -1,0 +1,41 @@
+.page-header {
+  position: relative;
+  padding: 3rem 0;
+  background-color: rgb(120, 53, 15);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://images.unsplash.com/photo-1604849329122-7c9be9b7bb5e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 0 0 8px 8px;
+}
+
+.page-header-title {
+  font-size: 2rem;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  color: White;
+  margin-bottom: 1rem;
+}
+
+.page-header-description {
+  font-size: 1.125rem;
+  color: white;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .page-header {
+    padding: 4rem 0;
+  }
+  
+  .page-header-title {
+    font-size: 3rem;
+  }
+
+  .page-header-description {
+    font-size: 1.25rem;
+  }
+}
