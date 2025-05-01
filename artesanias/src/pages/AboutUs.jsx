@@ -3,6 +3,7 @@ import "../estilos/AboutUs.css"
 import logo from '../imagenes/logoRaicesDulces.png'
 import alfajor from '../imagenes/ALFAJOR SOBRE NOSOTROS.png'
 import silla from '../imagenes/trabajo2.png'
+
 function AboutUs() {
   return (
     <div className="about-page">
@@ -19,21 +20,21 @@ function AboutUs() {
               <h2 className="section-title">Nuestra Historia</h2>
               <div className="history-paragraphs">
                 <p>
-                Desde 1990, Raíces Dulces combina la calidez de la madera de algarrobo con el placer de los alfajores caseros. 
-                Nuestros muebles artesanales destacan por su rusticidad y durabilidad, tallados a mano para crear piezas únicas.
-                Paralelamente, nuestros alfajores conservan el sabor de siempre, elaborados con ingredientes naturales y recetas tradicionales.
+                  Desde 1990, Raíces Dulces combina la calidez de la madera de algarrobo con el placer de los alfajores caseros. 
+                  Nuestros muebles artesanales destacan por su rusticidad y durabilidad, tallados a mano para crear piezas únicas.
                 </p>
                 <p>
-                En nuestro taller, cada creación sigue procesos cuidadosos.La madera se trabaja respetando su esencia, mientras los alfajores se hornean con el mismo esmero de antaño.
-                Dos expresiones artesanales distintas, unidas por un mismo principio: ofrecer productos auténticos que trasmitan calidez y sencillez.
+                  En nuestro taller, cada creación sigue procesos cuidadosos. La madera se trabaja respetando su esencia, mientras los alfajores se hornean con el mismo esmero de antaño.
+                  Dos expresiones artesanales distintas, unidas por un mismo principio: ofrecer productos auténticos que trasmitan calidez y sencillez.
                 </p>
               </div>
             </div>
             <div className="history-image-container">
               <img
                 src={logo}
-                alt="Creador de Raíces Dulces"
+                alt="Logo Raíces Dulces"
                 className="history-image"
+                loading="lazy"
               />
             </div>
           </div>
@@ -71,6 +72,7 @@ function AboutUs() {
                     title: "Acabado ecológico",
                     description: "Aplicamos ceras vegetales que realzan la tonalidad miel del algarrobo sin químicos agresivos"
                   }
+                  // ... otros pasos del proceso
                 ].map((paso, index) => (
                   <div key={`algarrobo-${index}`} className="process-step">
                     <div className="step-number">{index + 1}</div>
@@ -87,6 +89,7 @@ function AboutUs() {
                 src={silla}
                 alt="Proceso madera de algarrobo"
                 className="process-image"
+                loading="lazy"
               />
             </div>
           </div>
@@ -97,7 +100,7 @@ function AboutUs() {
               <h3 className="process-subtitle">Alfajores Artesanales</h3>
               <div className="process-steps">
                 {[
-                  {
+                   {
                     title: "Materias primas puras",
                     description: "Usamos miel de campo, harina orgánica y dulce de leche casero sin conservantes"
                   },
@@ -113,6 +116,7 @@ function AboutUs() {
                     title: "Armado tradicional",
                     description: "Rellenamos cada alfajor con generosidad y los bañamos en chocolate negro de origen ético"
                   }
+                  // ... otros pasos del proceso
                 ].map((paso, index) => (
                   <div key={`alfajores-${index}`} className="process-step">
                     <div className="step-number">{index + 1}</div>
@@ -129,6 +133,7 @@ function AboutUs() {
                 src={alfajor}
                 alt="Proceso alfajores artesanales"
                 className="process-image"
+                loading="lazy"
               />
             </div>
           </div>

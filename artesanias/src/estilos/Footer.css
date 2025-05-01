@@ -1,8 +1,8 @@
 .footer {
-  background-color: #6B240C; /* Base color */
+  background-color: #6B240C;
   padding: 3rem 0 1.5rem;
-  color: #ffffff; /* White text */
-  border-top: 1px solid #994D1C; /* Text color */
+  color: #ffffff;
+  border-top: 1px solid #994D1C;
   font-family: 'Arial', sans-serif;
 }
 
@@ -23,17 +23,16 @@
 
 .footer-section h3 {
   font-size: 1.2rem;
-  color: #E48F45; /* Light accent color for titles */
+  color: #E48F45;
   margin-bottom: 1.2rem;
   font-weight: 600;
   min-height: 2.5rem;
   display: flex;
   align-items: flex-end;
-  border-bottom: 1px solid #994D1C; /* Text color */
+  border-bottom: 1px solid #994D1C;
   padding-bottom: 0.5rem;
 }
 
-/* Quick Links */
 .footer-section.quick-links ul {
   list-style: none;
   padding: 0;
@@ -46,16 +45,15 @@
 
 .footer-section.quick-links a {
   text-decoration: none;
-  color: #ffffff; /* White text */
+  color: #ffffff;
   transition: color 0.3s ease;
 }
 
 .footer-section.quick-links a:hover {
-  color: #E48F45; /* Light accent color */
+  color: #E48F45;
   text-decoration: underline;
 }
 
-/* Payment Methods */
 .payment-icons {
   display: flex;
   flex-wrap: wrap;
@@ -68,7 +66,7 @@
   width: auto;
   border-radius: 4px;
   transition: transform 0.3s ease;
-  background-color: #ffffff; /* White background for payment icons */
+  background-color: #ffffff;
   padding: 2px;
 }
 
@@ -76,7 +74,6 @@
   transform: scale(1.05);
 }
 
-/* Subscribe */
 .footer-section.subscribe form {
   display: flex;
   flex-direction: column;
@@ -85,21 +82,21 @@
 
 .footer-section.subscribe input {
   padding: 0.8rem;
-  border: 1px solid #994D1C; /* Text color */
+  border: 1px solid #994D1C;
   border-radius: 4px;
   margin-bottom: 0.8rem;
   font-size: 0.9rem;
-  background-color: #ffffff; /* White background */
+  background-color: #ffffff;
 }
 
 .footer-section.subscribe input:focus {
   outline: none;
-  border-color: #E48F45; /* Light accent color */
+  border-color: #E48F45;
 }
 
 .footer-section.subscribe button {
   padding: 0.8rem;
-  background-color: #994D1C; /* Text color */
+  background-color: #994D1C;
   color: white;
   border: none;
   border-radius: 4px;
@@ -109,51 +106,53 @@
 }
 
 .footer-section.subscribe button:hover {
-  background-color:rgba(112, 53, 1, 0.76); /* Darker brown */
+  background-color: rgba(112, 53, 1, 0.76);
 }
 
 .success-message {
-  color: #ffffff; /* White text */
+  color: #ffffff;
   font-size: 0.9rem;
   text-align: center;
   padding: 0.8rem;
-  background-color: #994D1C; /* Text color */
+  background-color: #994D1C;
   border-radius: 6px;
-  border: 1px solid #E48F45; /* Darker brown */
+  border: 1px solid #E48F45;
   margin-top: 0.5rem;
   box-shadow: 0 2px 4px rgba(177, 30, 30, 0.34);
   transition: all 0.3s ease;
 }
 
-/* Social Media */
 .social-media {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
   margin: 2rem 0;
   padding-top: 1rem;
-  border-top: 1px solid #994D1C; /* Text color */
+  border-top: 1px solid #994D1C;
 }
 
 .social-media a {
   transition: transform 0.3s ease;
-  color: #ffffff; /* White text */
+  color: #ffffff;
 }
 
 .social-media a:hover {
   transform: translateY(-3px);
-  color: #E48F45; /* Light accent color */
+  color: #E48F45;
 }
 
-/* Copyright */
 .copyright {
   text-align: center;
   margin-top: 1.5rem;
   font-size: 0.9rem;
-  color: #E48F45; /* Light accent color */
+  color: #E48F45;
 }
 
-/* Responsive */
+/* ------------------------- */
+/* Media Queries (Responsive) */
+/* ------------------------- */
+
+/* Tablets y pantallas medianas */
 @media (max-width: 992px) {
   .footer-container {
     grid-template-columns: repeat(2, 1fr);
@@ -166,22 +165,63 @@
   }
 }
 
-@media (max-width: 576px) {
+/* Móviles (pequeñas pantallas) */
+@media (max-width: 768px) {
+  .footer {
+    padding: 2rem 0 1rem;
+  }
+
   .footer-container {
     grid-template-columns: 1fr;
+    padding: 0 1rem;
     gap: 1.5rem;
   }
-  
-  .payment-icons {
-    justify-content: center;
-  }
-  
+
   .footer-section {
     align-items: center;
     text-align: center;
   }
-  
+
   .footer-section h3 {
     justify-content: center;
+    font-size: 1.1rem;
+  }
+
+  .payment-icons {
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .payment-icon {
+    max-height: 25px;
+  }
+
+  .footer-section.subscribe form {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .social-media {
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .copyright {
+    font-size: 0.8rem;
+    padding: 0 1rem;
+  }
+}
+
+/* Pantallas muy pequeñas (ej: iPhone SE) */
+@media (max-width: 480px) {
+  .footer-section.subscribe input,
+  .footer-section.subscribe button {
+    padding: 0.7rem;
+  }
+
+  .social-media a svg {
+    width: 20px;
+    height: 20px;
   }
 }

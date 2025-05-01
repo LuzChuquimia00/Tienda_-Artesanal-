@@ -6,7 +6,6 @@ import "../estilos/Products.css"
 const Products = () => {
   const [searchTerm, setSearchTerm] = useState("")
   
-  // (Mantengo el mismo array de productos que tenías originalmente)
   const [products] = useState([
     {
       id: 1,
@@ -106,7 +105,8 @@ const Products = () => {
       image: "https://www.dealgarrobo.com/img/upload/imagen_small_181.webp",
       description: "Este producto es ideal para relajarte con la comodidad que tiene para nuestros clientes.",
     },
-  ])
+    // ... (todos los demás productos del array original)
+  ]);
 
   const filteredProducts = products.filter(product => 
     product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -115,12 +115,10 @@ const Products = () => {
 
   return (
     <div className="products-container">
-      {/* Encabezado con tira marrón */}
       <header className="products-header">
         <h1 className="products-title">Nuestros Productos</h1>
         <p className="products-description">Descubre nuestra colección única</p>
         
-        {/* Buscador (manteniendo el mismo diseño) */}
         <div className="products-search">
           <input
             type="text"
@@ -132,7 +130,6 @@ const Products = () => {
         </div>
       </header>
 
-      {/* Grid de productos */}
       <div className="products-grid">
         {filteredProducts.length > 0 ? (
           filteredProducts.map(product => (
@@ -142,15 +139,17 @@ const Products = () => {
                   src={product.image} 
                   alt={product.name} 
                   className="product-image"
+                  loading="lazy"
                   onError={(e) => {
                     e.target.src = 'https://via.placeholder.com/300x200?text=Imagen+no+disponible'
+                    e.target.style.objectFit = 'contain'
                   }}
                 />
               </div>
               <div className="product-details">
                 <h3 className="product-name">{product.name}</h3>
                 <p className="product-description">{product.description}</p>
-                <p className="product-price">${product.price.toLocaleString()}</p>
+                <p className="product-price">${product.price.toLocaleString('es-AR')}</p>
               </div>
             </div>
           ))

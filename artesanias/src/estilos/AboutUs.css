@@ -100,147 +100,68 @@
   margin-right: auto;
 }
 
-/* CONTENEDORES DE PROCESO CON IMAGEN */
+/* Contenedores de Imágenes - Mismo estilo en todos los dispositivos */
+.history-image-container,
+.process-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #f9f5f0; /* Fondo neutro similar al papel */
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 2px 8px rgba(120, 53, 15, 0.1);
+}
+
+/* Imágenes - Comportamiento consistente */
+.history-image,
+.process-image {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 350px; /* Altura máxima igual en todos lados */
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* Layout de Procesos - Estilo idéntico a desktop */
 .process-with-image {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  margin-bottom: 4rem;
   background: white;
-  border-radius: 0.8rem;
-  overflow: hidden;
-  box-shadow: 0 6px 18px rgba(107, 90, 69, 0.1);
+  padding: 1.5rem;
+  border-radius: 12px;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .process-with-image {
     flex-direction: row;
-    align-items: stretch;
-    min-height: 450px;
   }
   .process-with-image.reverse {
     flex-direction: row-reverse;
   }
 }
 
-.process-content {
-  flex: 1;
-  padding: 2.5rem;
-}
-
-/* ESTILOS PARA IMÁGENES - VERSIÓN ESCRITORIO */
-.process-image-container {
-  position: relative;
-  min-height: 350px;
-  overflow: hidden;
-  background-color: #f8f4e9;
-  border-radius: 1rem;
-}
-
-@media (min-width: 992px) {
-  .process-image-container {
-    flex: 1.2;
-    min-height: auto;
-    margin: 1.5rem;
-    border-radius: 1.5rem;
-  }
-
-  .process-image {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    height: 90%;
-    max-width: none;
-    border-radius: 1rem;
-  }
-  
-  .process-image:hover {
-    transform: translate(-50%, -50%) scale(1.05);
-  }
-}
-
-/* ESTILOS PARA MÓVIL (MENOS DE 992px) */
-@media (max-width: 991px) {
-  .process-with-image {
-    margin: 0 -1.5rem;
-    padding: 0 1.5rem;
-    background: white;
-    box-shadow: none;
-    border-radius: 0;
-  }
-
-  .process-image-container {
-    margin: 0 0 1.5rem 0;
-    border-radius: 1rem;
-    height: 280px;
-    min-height: auto;
-    background-color: transparent;
-  }
-
-  .process-image {
-    width: 100%;
-    height: 100%;
-    max-height: none;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 1rem;
-  }
-
-  /* Ajuste específico para alfajores si es necesario */
-  .process-with-image.reverse .process-image-container {
-    height: 250px;
-  }
-}
-
-/* PASOS DEL PROCESO */
-.process-steps {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-}
-
+/* Textos - Mantenemos la misma jerarquía visual */
 .process-step {
-  position: relative;
-  display: flex;
-  gap: 1rem;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  transition: all 0.3s ease;
-}
-
-.process-step:hover {
-  background-color: var(--color-amber-50);
-}
-
-.process-step:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background-color: var(--color-amber-200);
-  transition: all 0.3s ease;
-}
-
-.process-step:hover:before {
-  background-color: var(--color-amber-400);
+  border-left: 3px solid var(--color-amber-200);
+  padding-left: 1rem;
+  margin: 1rem 0;
 }
 
 .step-number {
-  flex-shrink: 0;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 9999px;
   background-color: var(--color-amber-200);
-  display: flex;
+  color: var(--color-amber-900);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-amber-900);
-  font-weight: 700;
-  font-size: 1rem;
+  margin-right: 0.5rem;
+  font-weight: bold;
 }
 
 .step-content {
